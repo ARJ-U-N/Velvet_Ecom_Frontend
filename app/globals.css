@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Keep this pointing to your config */
+@config "../tailwind.config.ts";
+
+/* Your New Custom Styles */
+.blob-shape {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.blob-shape-alt {
+  border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Fallback for the organic mask */
+.organic-mask-1 {
+  clip-path: path('M10,20 C30,0 70,0 90,20 C110,40 110,80 90,100 C70,120 30,120 10,100 C-10,80 -10,40 10,20 Z');
+  transform: scale(8);
+  transform-origin: center;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+
+
+
+
+/* ... existing styles ... */
+
+/* New Styles for the Story Page */
+.founder-frame {
+  border-radius: 45% 55% 64% 36% / 44% 41% 59% 56%;
+}
+
+.blob-mask-hero {
+  clip-path: url(#hero-mask);
+}
+
+/* Ensure these exist if you haven't added them yet */
+.organic-frame {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+.organic-frame-alt {
+  border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
+}
+
+
+
+
+
+
+
+/* ... existing styles ... */
+
+/* New Blob Shapes for Shop Page */
+.blob-1 { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+.blob-2 { border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%; }
+.blob-3 { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+
+
+
+
+/* ... existing styles ... */
+
+/* Trade Page Shapes */
+.sweeping-curve {
+  clip-path: ellipse(100% 100% at 50% 0%);
+}
+
+.organic-blob {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+
+
+
+
+
+
+/* ... existing styles ... */
+
+/* Contact Page Shapes */
+.organic-blob-container {
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+}
+
+.wave-mask {
+  clip-path: ellipse(80% 100% at 100% 50%);
 }
